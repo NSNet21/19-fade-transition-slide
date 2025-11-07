@@ -64,7 +64,7 @@ function upDateSlide(index) {
   slides[index].classList.add("show");
   setTimeout(() => {
     isTransitioning = false;
-  }, timeDelay);
+  }, timeDelay); // timeDelay (It's set to 900 milliseconds)
 }
 
 // ===== function update active indicator =====
@@ -79,7 +79,6 @@ function upDateActiveIndicator(index) {
 }
 
 // ===== add event listener to each indicator =====
-// add Event listener to each indicator
 indicators.forEach((indicator, i) => {
   indicator.addEventListener("click", () => {
     if (isTransitioning || i === index) return;

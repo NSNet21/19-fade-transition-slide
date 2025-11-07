@@ -1,0 +1,375 @@
+:root {
+  --text: rgb(226, 221, 244);
+  --index-indicator-button: rgb(226, 221, 244, 0.1);
+  --button-shadow: rgb(226, 221, 244, 0.6);
+  --background: rgb(9, 6, 18);
+  --background-indicator-container: rgba(37, 29, 64, 0.3);
+  --button-overlay01: rgb(9, 6, 18, 0.5);
+  --button-overlay02: rgb(9, 6, 18, 0.9);
+  --primary: rgb(162, 142, 219);
+  --secondary: rgb(104, 41, 132);
+  --accent: rgb(173, 71, 197);
+  --accent-overlay: rgb(173, 71, 197, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: none;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--background);
+}
+
+/* ---------- wrapper styling ---------- */
+
+.slider-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+/* ---------- header styling ---------- */
+
+.header {
+  color: var(--text);
+  font-size: 2rem;
+  text-transform: uppercase;
+  cursor: default;
+  transition: all 0.3s ease-in-out;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.header:hover {
+  text-shadow: 0 0 35px var(--accent-overlay);
+  color: var(--accent);
+}
+
+/* ---------- .slider-container styling ---------- */
+
+.slider-container {
+  width: clamp(300px, 400px, 450px);
+  height: 600px;
+  /* background-color: red; */
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* overflow set to hidden for hide for overflow element */
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.slider-container:hover {
+  box-shadow: 0 0 200px var(--accent-overlay);
+}
+
+/* ===== slider styling (all image in here)===== */
+
+/* 🡻 sub container of the image (slide) */
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ---------- slide styling (image) ---------- */
+
+.slide {
+  width: clamp(300px, 400px, 450px);
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 2.5s ease, filter 1.8s ease;
+  cursor: pointer;
+}
+
+/* ---------- slide children styling ---------- */
+
+.slide1 {
+  background: url("images/img1girl.jpg");
+  background-size: cover;
+  background-position: top 32% center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide2 {
+  background: url("images/img2girl.jpg");
+  background-size: cover;
+  background-position: center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide3 {
+  background: url("images/img3girl.jpg");
+  background-size: cover;
+  background-position: center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide4 {
+  background: url("images/img4girl.jpg");
+  background-size: cover;
+  background-position: center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide5 {
+  background: url("images/img5boy.jpg");
+  background-size: cover;
+  background-position: center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide6 {
+  background: url("images/img6girl.jpg");
+  background-size: cover;
+  background-position: center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide7 {
+  background: url("images/img7girl.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide8 {
+  background: url("images/img8boy.jpg");
+  background-size: cover;
+  background-position: center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide9 {
+  background: url("images/img09boy.jpg");
+  background-size: cover;
+  background-position: center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide10 {
+  background: url("images/img10boy.jpg");
+  background-size: cover;
+  background-position: top 5% center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide11 {
+  background: url("images/img11boy.jpg");
+  background-size: cover;
+  background-position: top center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide12 {
+  background: url("images/img12boy.jpg");
+  background-size: cover;
+  background-position: top 45% center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slide13 {
+  background: url("images/img13boy.jpg");
+  background-size: cover;
+  background-position: top center;
+  /* set opacity to zero & set visibility to
+  hidden first */
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ---------- add show state on JavaScript ---------- */
+.slide.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- add tf-effect state on transition on JavaScript ---------- */
+.slide.tf-effect {
+  filter: brightness(1.4);
+}
+
+/* ---------- index-indicator styling section ---------- */
+
+.index-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+
+  /* 🡻 Responsive Properties 🡻 */
+  /* clamp(MIN, PREFERRED, MAX)
+    สูงอย่างน้อย 45px, พยายามอยู่ที่ 7vw, แต่ไม่เกิน 60px
+  */
+  height: clamp(45px, 7vw, 60px);
+  /* Gap อย่างน้อย 10px, พยายามอยู่ที่ 1.5vw, แต่ไม่เกิน 15px
+  */
+  gap: clamp(10px, 1.5vw, 15px);
+  /* Padding (ซ้าย/ขวา) อย่างน้อย 15px, พยายามอยู่ที่ 2vw, แต่ไม่เกิน 20px
+  */
+  padding: 0 clamp(15px, 2vw, 20px);
+  margin: 10px 0;
+  background-color: var(--background-indicator-container);
+  /* border: 0.25rem solid var(--primary); */
+  cursor: pointer;
+  /* Radius ควรสัมพันธ์กับ Height
+    เพื่อให้มันโค้งเป็น "แคปซูล" เสมอ
+  */
+  border-radius: 50vmax; /* หรือใช้ค่าสูงๆ เช่น 999px */
+  /* overflow: hidden; */
+  transition: all 0.5s ease;
+}
+
+/* .index-indicator:hover {
+  box-shadow: 0 0 100px var(--accent-overlay);
+} */
+
+/* 🡻 index styling */
+.index-indicator .index {
+  background-color: var(--index-indicator-button);
+
+  /* ขนาดจุด (กว้าง/สูง) อย่างน้อย 16px, พยายามอยู่ที่ 2.5vw, แต่ไม่เกิน 25px
+  */
+  width: clamp(16px, 2.5vw, 25px);
+  height: clamp(16px, 2.5vw, 25px);
+
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* 🡻 index on hover state */
+.index-indicator .index:hover {
+  background-color: var(--accent);
+  box-shadow: 0 0 50px var(--accent);
+}
+
+/* 🡻 index on active state */
+.index-indicator .index.active {
+  background-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent);
+}
+
+/* ---------- button styling section ---------- */
+
+.button {
+  font-size: 8rem;
+  /* font-weight: 500; */
+  color: var(--text);
+  position: absolute;
+  background-color: var(--button-overlay01);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--button-overlay02);
+  box-shadow: 0 0 76px 5px var(--button-shadow);
+  & span {
+    text-shadow: 0 0 35px var(--text);
+  }
+}
+
+.button span {
+  transform: translateY(-7px);
+  transform: all 0.3s ease;
+}
+
+/* ---------- next button styling ---------- */
+
+#nextBtn {
+  right: 0;
+  top: 50%;
+  transform: translate(2px, -50%);
+  width: 75px;
+  height: 125px;
+  border-radius: 7px 0 0 7px;
+}
+
+.button#nextBtn:active {
+  transform: translate(6px, -50%) scale(0.9);
+}
+
+/* ---------- previous button styling ---------- */
+
+#prevBtn {
+  left: 0;
+  top: 50%;
+  transform: translate(-2px, -50%);
+  width: 75px;
+  height: 125px;
+  border-radius: 0 7px 7px 0;
+}
+
+.button#prevBtn:active {
+  transform: translate(-6px, -50%) scale(0.9);
+}
+
+@media only screen and (max-width: 600px) {
+  .slider-container {
+    width: 85vw;
+  }
+
+  .slide {
+    width: 85vw;
+  }
+}
